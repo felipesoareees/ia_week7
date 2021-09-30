@@ -1,16 +1,16 @@
 provider "aws" {
- region = "us-east-2"
+ region = "us-east-1"
 }
 
 module "webserver" {
 # source = "./modules/webserver-week6"
-  source = "github.com/felipesoareees/ia_week7//modules/webserver-week6?ref=v0.0.1"
+  source = "github.com/felipesoareees/ia_week7//modules/webserver-week6?ref=v0.0.3"
   cluster_name = "web-server-dev"
- 
- instance_type = "t2.micro"
- min_size = 1
- max_size = 3
- desired_size = 2
+
+  instance_type = "t2.micro"
+  min_size = 1
+  max_size = 3
+  desired_size = 2
 }
 
 resource "aws_autoscaling_schedule" "scale_out_during_business_hours" {
