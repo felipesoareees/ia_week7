@@ -1,5 +1,5 @@
 resource "aws_launch_configuration" "test" {
-  image_id        = "ami-ID"
+  image_id        = "ami-00d3f22ff89c7323a"
   instance_type   = var.instance_type
   security_groups = [aws_security_group.instance.id]
 
